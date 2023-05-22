@@ -39,7 +39,10 @@ def set_params():
         }
     ]    
     logger.info('Generated bedtime story successfully')
-    return jsonify(gptj.chat_completion(messages)['choices'][0]['message']['content'])
+    response = jsonify(gptj.chat_completion(messages)['choices'][0]['message']['content'])
+    # gptj.close()  # Close the GPT4All instance after each request to release resources
+    return response
+    # return jsonify(gptj.chat_completion(messages)['choices'][0]['message']['content'])
 
 def validate_parameters(model, mood, event, name, age):
     # Check if any of the parameters are missing

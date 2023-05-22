@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT4ALL Bedtime Story Generator</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header>
+        <h1>GPT4ALL Bedtime Story Generator</h1>
+    </header>
+    <main>
+        <form id="storyForm">
+            <label for="name">Child's Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Child's Age</label>
+            <input type="number" id="age" name="age" min="1" max="10" required>
+
+            <label for="mood">Child's Mood</label>
+            <input type="text" id="mood" name="mood" required>
+
+            <label for="event">Today's Event</label>
+            <input type="text" id="event" name="event" required>
+
+            <label for="model">Model (default: 'text-davinci-002')</label>
+            <input type="text" id="model" name="model" value="text-davinci-002">
+
+            <input type="submit" value="Generate Story">
+        </form>
+
+        <section id="storySection">
+            <h2>Your Bedtime Story</h2>
+            <p id="story"></p>
+        </section>
+    </main>
+    <script src="static/main.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 ## I want to build a python flask app that chats with GPT4ALL to generate bedtime stories based on user input.
 ## I want to use the GPT4ALL API to generate bedtime stories based on user input.
-from flask import Flask, jsonify , request
+from flask import Flask, jsonify , request, render_template
 import logging
 from gpt4all_api import gpt4all_api_blueprint
 
@@ -37,7 +37,8 @@ configure_logging()
 # Landing page for the API
 @app.route('/', methods=['GET'])
 def home():
-    return "<h1>GPT4ALL</h1><p>This site is a prototype API for GPT4ALL.</p>"
+    return render_template('index.html')
+    # return "<h1>GPT4ALL</h1><p>This site is a prototype API for GPT4ALL.</p>"
 
 
 app.run( host='0.0.0.0', port=5001 )
