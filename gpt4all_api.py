@@ -10,6 +10,14 @@ gpt4all_api_blueprint = Blueprint('gpt4all_api', __name__)
 
 logger = logging.getLogger(__name__)
 
+
+#Warmup model function.  This function downloads required models before they are needed. 
+def warmup_model():
+    logger.info("Starting GPT4ALL Models")
+    gptj = GPT4All("ggml-gpt4all-j-v1.3-groovy")
+
+
+
 # Write a POST method that accepts values for mood, event, and name.
 # Use the values to update the messages dictionary. Parameterize the values in messages to be replaced with the values from the POST method.
 # Return the value of the content key from the messages dictionary.

@@ -2,7 +2,7 @@
 ## I want to use the GPT4ALL API to generate bedtime stories based on user input.
 from flask import Flask, jsonify , request, render_template
 import logging
-from gpt4all_api import gpt4all_api_blueprint
+from gpt4all_api import gpt4all_api_blueprint, warmup_model
 
 
 app = Flask(__name__)
@@ -37,8 +37,11 @@ configure_logging()
 # Landing page for the API
 @app.route('/', methods=['GET'])
 def home():
+    warmup_model()
     return render_template('index.html')
+
     # return "<h1>GPT4ALL</h1><p>This site is a prototype API for GPT4ALL.</p>"
 
 
 app.run( host='0.0.0.0', port=5001 )
+#6eacf9a3574e
