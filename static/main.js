@@ -13,7 +13,7 @@ document.getElementById("storyForm").addEventListener("submit", function(event){
 
     console.log('Form data:', data);
 
-    fetch('http://192.168.1.37:5001/api/v1/resources/gpt4all', {
+    fetch('http://storytime.ourkids.buildmodernapps.com:5001/api/v1/resources/gpt4all', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
